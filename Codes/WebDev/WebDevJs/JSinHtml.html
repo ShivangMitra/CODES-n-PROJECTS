@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>This is a heading</h1>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, quidem earum molestias nostrum tempore recusandae quae dolorum. Ea autem dolores quia, velit expedita debitis error officiis, nihil temporibus voluptatibus perspiciatis nobis, magnam cumque harum?</p>
+        </div>
+    </div>
+    <script>
+        var a=78;
+        var b="Shivang";
+        console.log(b);
+        var c=34.5;
+        console.log("the sum of a and c is "+ (a+c));
+        var d=2,e=9;
+        console.log("the answer of 2 to the power of 9 is "+(d**e));
+        var channel='R09Zephyrus';
+        var temp=`${b} is a 'nice' person "and" he has a cannel called ${channel}`;
+        console.log(temp);
+        var len = b.length;
+        console.log(`length of my name is ${len}`);
+        var str="this is a string";
+        console.log(str);
+        //this will return the first index of the occurance that is searched
+        var pos=str.indexOf('is');
+        console.log(pos);
+        pos=str.lastIndexOf('is');
+        console.log(pos);
+
+        //substring from a string
+        var substr=str.slice(1,6);
+        console.log(substr);
+        substr=str.substring(1,6);
+        console.log(substr);
+        substr=str.substr(1,6);
+        console.log(substr);
+
+        var replaced=str.replace("string","chantus");
+        console.log(replaced);
+
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+
+        var newString=str.concat(`NeW StRiNg`);
+        console.log(newString);
+
+        var strSpace="    this contains      widespaces     ";
+        console.log(strSpace.trim());
+
+        var char3=str.charAt(2);
+        console.log(char3);
+        var char=str.charCodeAt(8);//ASCII code of charcter
+        console.log(char);
+
+        console.log(str[3]);
+    </script>
+</body>
+</html>

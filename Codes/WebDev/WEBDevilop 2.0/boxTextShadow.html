@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box shadow and text shadow</title>
+</head>
+<style>
+    .container{
+        display: flex;
+    }
+    .card{
+        padding: 23px 12px;
+        margin: 23px 12px;
+        /* border: 2px solid red; */
+        background-color: cadetblue;
+        /* first offset from x then y then blur radius then spread radius and then color  */
+        box-shadow: 10px 13px 10px 5px rgba(20, 20, 40, 0.8);
+
+        /* box-shadow: inset 3px 5px red; this is to get shoadow nside the box  */
+        /* box-shadow: 3px 5px green, 4px 6px red; this is to add multiple shadows to a single box  */
+    }
+    .card h2{
+        text-shadow: 4px 3px 3px white;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="card" id="card1">
+            <h2>Card 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores soluta ad aspernatur, libero assumenda itaque eum autem necessitatibus, at nisi dolorem minima nostrum hic animi cum modi corporis distinctio aperiam, molestias doloremque rem. Nulla.</p>
+        </div>
+        <div class="card" id="card2">
+            <h2>Card 2</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, saepe! Consequuntur sunt suscipit, assumenda quia dolorum laudantium dolore fuga repellat eum rerum. Nesciunt amet iusto a dolore consequuntur iste animi eaque laudantium quaerat officiis.</p>
+        </div>
+        <div class="card" id="card3">
+            <h2>Card 3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eligendi neque, vel minima, nulla aperiam repellat dolorum officiis rerum, cum rem sapiente perferendis numquam sequi dolorem earum totam. Quas quia quasi optio esse possimus.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

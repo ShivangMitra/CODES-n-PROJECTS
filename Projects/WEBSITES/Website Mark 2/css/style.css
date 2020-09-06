@@ -1,0 +1,159 @@
+/* CSS Reset  */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables  */
+:root{
+    --navbar-height: 59px;
+}
+
+/* navigation bar  */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 75px;
+}
+
+#navbar::before{
+    content: '';
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+ /*navigation bar: logo and image  */
+#logo{
+    margin: 10px 34px;
+}
+
+#logo img{
+    margin: 3px 6px;
+    height: 100px;
+}
+
+/* navbar list styling  */
+#navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+#navbar ul li{
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+#navbar ul li a{
+    color: white;
+    padding: 3px 22px;
+    display: block;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+/* home section  */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+    height: 582px;
+}
+
+#home::before{
+    content: '';
+    background: url('../img/bg.jpg') no-repeat center center/cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+}
+
+#home h1{
+    color: white;
+    text-align: center;
+    font-family: 'Alata', sans-serif;
+}
+
+#home p{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Alata', sans-serif;
+}
+
+.services-container{
+    margin: 100px 0px;
+}
+/* Sevices Section  */
+#services{
+    margin: 34px;
+    display: flex;
+}
+
+#services .box{
+    border: 2px solid brown;
+    padding: 34px;
+    margin: 3px 6px;
+    border-radius: 23px;
+    background-color: rgb(190, 190, 190);
+}
+
+#services .box img{
+    height: 170px;
+    width: 250px;
+    margin: auto;
+    display: block;
+}
+#services .box p{
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+/* Client Section  */
+#client-section{
+
+}
+
+#clients{
+    display: flex;
+}
+
+/* utility classes */
+.h-primary{
+    font-family: 'Alata', sans-serif;
+    font-size: 2.8rem;
+    padding: 12px;
+}
+
+.h-secondary{
+    font-family: 'Alata', sans-serif;
+    font-size: 1.8rem;
+    padding: 12px;
+}
+
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center{
+    text-align: center;
+}

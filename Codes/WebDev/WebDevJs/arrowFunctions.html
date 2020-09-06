@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <div class="container">
+        This is Ze Arrow
+    </div>
+
+    <script>
+        // function greet()
+        // {
+        //     console.log("mooooorrrnnnnnniiiiiingssss heeeeereeee");
+        // }
+        greet = ()=> {
+            console.log("mai chintu hu");
+        }
+        greet();
+
+        let sum=(a,b)=> a+b;
+        let half=a=>a/2;
+
+        let obj1={
+            greeting: "aur ka haal chal babua",
+            names:["harry","rohan","skillf","chintu"],
+            speak(){
+                this.names.forEach((student)=>{
+                    console.log(this.greeting+" chantusss "+student);
+                });
+            }
+        }
+        obj1.speak();
+    </script>
+</body>
+</html>

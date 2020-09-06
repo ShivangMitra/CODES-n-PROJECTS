@@ -1,0 +1,494 @@
+<!-- shortcut for comments is ctrl+/ -->
+<!DOCTYPE html>
+<!-- Our HTML code starts here -->
+<html lang="en">
+<!--Our Head tag starts here-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is description">
+    <meta name="keywords" content="youtube, R09Zephyrus, r09zephyrus, youtuber r09zephyrus, youtuber R09Zephyrus">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <!-- this is how you include external css -->
+    <!-- the one with is written afterwords i.e. link css or internal css that will get exicuted -->
+    <link rel="stylesheet" href="zephyrus.css">
+    
+    <!-- this is how you include external JS(JavaScript) -->
+    <script src="zephyrus.js"></script>
+    
+    <title>Zephyrus_demo</title>
+    
+    <!-- this is internal css -->
+    <!-- in line css has more weightage over internal css  -->
+    <style>
+        *{
+            /* this is a universal selector  */
+            box-sizing: border-box;
+            /* margin: 0; */
+            /* padding: 0; */
+        }
+        body{
+            background-color: rgb(114, 114, 114);
+        }
+        /* this is an element selector  */
+        p{
+            /* this !important gives it the highest precedence */
+            color: coral;
+            font-size: 33px;
+            line-height: 1.3em;
+            font-weight: bold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        /* this is an id selector */
+        #red{
+            color: red;
+        }
+        /* this is class selector */
+        .pink{
+            /* you can write colors just by writing or rgb or hex colors #ffffff  */
+            color: pink;
+        }
+        .bgblue{
+            background-color: black;
+        }
+        /* grouping selector */
+        footer, span{
+            background-color: blueviolet;
+        }
+        #unique{
+            background-color: darkblue;
+            height: 100px;
+            width: 455px;
+            border: 4px dashed darkorange;
+            /* border-width: 4px;
+            border-color: darkorange;
+            border-style: dashed; */
+            border-radius: 15px;
+        }
+        #unique2{
+            height: 500px;
+            width: 455px;
+            background-image: url(https://source.unsplash.com/user/erondu/60x90);
+            border: 2px solid red;
+            background-repeat: no-repeat; 
+            /* repeat-x repeat-y will make it repeat on x and y axis  */
+            /* background-position: 192px 34px;  */
+            background-position: center center; 
+            /* background-position: top left;  */
+            /* background-position: top top;  */
+        }
+        .small{
+            color: rgb(0, 247, 255);
+            font-family: fantasy;
+            font-size: medium;
+        }
+        .container{
+            background-color: rgb(0, 0, 0);
+            border: 3px solid rgb(0, 247, 255);
+
+            /* we can set margin/padding fot top, right, bottom and left like this  */
+            /* padding-top:79px ;
+            padding-left:34px ;
+            padding-bottom:79px ;
+            padding-right:79px ; */
+
+            padding: 23px 56px 6px 78px;
+            /* padding/margin = top right bottom left;  */
+
+            border-radius: 34px;
+            width: 533px;
+
+            box-sizing: border-box;
+
+            margin: 34px;
+        }
+        .navbar{
+            background-color: rgb(248, 123, 123);
+            border-radius: 12px;
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none;
+            margin: 12px 15px;
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .navbar li a:hover{
+            color: rgb(22, 99, 102);
+        }
+        .search{
+            float: right;
+            color: rgb(0, 0, 0);
+            padding: 12px 50px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 15px;
+            padding: 1px 10px;
+            width: 140px;
+        }
+        .top img{
+            display: block;
+            margin: auto;
+            width: 34px;
+        }
+        .top h3{
+            text-align: center; 
+            /* in responsive it wont create a problem and stay in center */
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin: 0px;
+        }
+        .top{
+            margin: auto;
+            border: 2px solid red;
+            width: 13%;
+        }
+        /* CSS position: static(default), relative, absolute,fixed, sticky */
+        .parent{
+            position: relative;
+            border: 2px solid red;
+            height: 700px;
+        }
+        .box{
+            display: inline-block;
+            border: 2px solid red;
+            width: 150px;
+            height: 150px;
+            margin: 2px;
+        }
+        #box3{
+            /* relative: means it will move relative to its normal position  */
+            position: relative;
+            top: 34px;
+        }
+        #box5{
+            /* absolute: mean it will move relative to its parents position but that parent's position should not be static or default*/
+            position: absolute;
+            top: 34px;
+            left: 34px;
+        }
+        .bing{
+            width: 170px;
+            height: 170px;
+            border: 2px solid black;
+        }
+        #bing1{
+            position: relative;
+            top: 49px;
+            z-index: 35;
+            /* the box which has heigher z index will be displayed on top of the other box  */
+            background-color: green;
+        }
+        #bing2{
+            position: relative;
+            top: 14px;
+            /* z-index: will work only for position: relative, absolute, fixed or sticky */
+            z-index: 34;
+            /* this will make the thing hidden but will keep taking the space it was taking before  */
+            /* visibility: hidden; */
+            background-color: red;
+        }
+        #bing3{
+            /* this will make the object completely vanish from the screen it will also not take any space it was taking before  */
+            /* display: none; */
+            background-color: blue;
+        }
+        #bing4{
+            background-color: yellow;
+        }
+        .flexbox{
+            display: flex;
+            height: 544px;
+            width: 100%;
+            border: 2px solid black;
+            /* FLEX PROPERTIES FOR FLEX CONTAINER  */
+            /* flex-direction: row; this is by default */
+            /* flex-direction: column; */
+            /* flex-direction: row-reverse; */
+            /* the on which is written afterwards will over write the upper  */
+            /* flex-direction: column-reverse; */
+            flex-wrap: wrap;
+            /* the default is no wrap  */
+            /* flex-flow: row-reverse wrap; */
+            /* this is a shorthand to set both direction: and wrap ; */
+            /* justify-content: center;
+            justify content will align elements in the horizontal direction
+            justify-content: space-between;
+            justify-content: space-evenly;
+            justify-content: space-around; */
+
+            /* justify content will align elements in the vertical direction  */
+            align-items: center;
+            align-items: flex-end;
+            align-items: flex-start;
+            /* align-items: stretch; */
+        }
+        .itm{
+            background-color: tomato;
+            border: 2px solid green;
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            padding: 3px;
+        }
+        #item1{
+            /* FLEX PROPERTIES OF A FLEX ITEM  */
+            order: 2;
+
+            /* flex-grow: 2; */
+        }
+        #item2{
+            /* negative numbers are invalid for flexgrow  */
+            /* flex-grow: 3;
+            flex-shrink: 3; */
+            flex-basis: 160px;
+            /* when flex-direction: is set to row then flex-basis: will control width  */
+            /* when flex-direction: is set to column then flex-basis: will control height  */
+        }
+        #item3{
+            /* the one which has heigher order will get displayed after the prevoius orders  */
+            order: 40;
+            flex: 2 2 230px;
+
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: center;
+        }
+        </style>
+</head>
+<!--Our Body tag starts here-->
+<body>
+    <!-- this is heading, its size varies from h1-h6  -->
+    <h1>R09Zephyrus</h1>
+    <h2>R09Zephyrus</h2>
+
+    <!-- this is how you write a paragraph -->
+    <p>Hi welcome to my brand new website</p>
+    <p>im sure you like it</p>
+    <!-- lorem23 for 23 words dumm text-->
+    <p>Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur <strong>this is strong</strong> adipisicing elit. Sit pariatur a quaerat laboriosam officiis vel ullam, quia <em>this is emphasized</em> amet eos perferendis non. <b>this is bold</b> Quasi, animi pariatur accusantium praesentium temporibus <i>this is italic</i> tempore veritatis deserunt, placeat nihil, architecto reiciendis.</p>
+    <!-- with the help of p*any number you can produce n number of paragraphs -->
+    <!-- this is how you break a line -->
+    <p>hello <br> you are chintu</p>
+    <!-- this is a ruler tag -->
+    <hr>
+    <p>yooooooooo</p>
+    <!-- ctrl+enter to jump into the new line -->
+
+    <!-- this is how you imbed links on your website by anchor 'a' -->
+    <!-- target="_blank" is for opening link in new tab  -->
+    <a href="https://www.youtube.com/channel/UClwiGlNYPwVd8lQbCuYB7jg" target="_blank">Check out my channel</a><br>
+    <a href="https://www.youtube.com" target="_blank">YOUTUBE</a><br>
+    <!-- to link any other html or js file via link <a href="name of the file.extention">name</a>  -->
+
+    <!-- this how to import a image -->
+    <!-- image is not present hence alt text is shown -->
+    <img src="cintu.jpg" alt="Error loading image">
+    <img src="https://source.unsplash.com/user/erondu/1600x900" alt="remote image">
+
+    <!-- UNORDERED LIST -->
+    <ul type="circle">
+        <li>this is the first item of my unordered list</li>
+        <li>this is the second item of my unordered list</li>
+        <li>this is the third item of my unordered list</li>
+    </ul>
+
+    <!-- ORDERED LIST  -->
+    <ol type="I">
+        <li>this is the first item of my ordered list</li>
+        <li>this is the second item of my ordered list</li>
+        <li>this is the third item of my ordered list</li>
+    </ol>
+    <!-- list nesting is possible -->
+
+    <!-- TABLES -->
+    <h3>HTML Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Channel</th>
+                <th>Subs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Shivang</td>
+                <td>R09Zephyrus</td>
+                <td>39</td>
+            </tr>
+            <tr>
+                <td>Vaibhav</td>
+                <td>Game On With Seven</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>Sid</td>
+                <td>Sidscan</td>
+                <td>1.25k</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- FORMS -->
+    <h2>Fill the form below</h2>
+    <form action="">
+        <!-- this is to create division -->
+        <div>
+            Name: <input type="text" name="myName">
+        </div>
+        <div>
+            Age: <input type="text" name="myAge">
+        </div>
+        <div>
+            Email: <input type="email" name="myEmail">
+        </div>
+        <div>
+            DOB: <input type="date" name="myDob">
+        </div>
+        <div>
+            Favorite Number: <input type="number" name="favNum">
+        </div>
+        <label for="eligible">are you eligible?:</label>
+        <div>
+            <!-- checked is for keeping the box checked initially -->
+            <input type="checkbox" name="myEligibility" checked id="eligible">
+        </div>
+        <div>
+            Gender: Male <input type="radio" name="myGender"> FeMale <input type="radio" name="myGender">
+        </div>
+        <div>
+            Write about yourself: <textarea name="myText" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="car">Car</label>
+            <select name="myCar" id="car">
+                <option value="Audi">Audi</option>
+                <option value="Porche" selected>Porche</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <!-- span is an inline element while p is a block element  -->
+    <span style="border: 2px solid red;">this is a span</span>
+    <span style="border: 2px solid blue;">this is also a span</span>
+    <p style="border: 2px solid red;">this is a para</p>
+    <p style="border: 2px solid blue;">this is also a para</p>
+    
+    <!-- Ids and classes -->
+    <div id="mainBox" class="redBg blackBorder">
+        this is mainbox
+    </div>
+    <span class="redBg"></span>
+    <!-- span.redBg enter  this is for class-->
+    <span class="redBG"></span>
+    <!-- span#mainSpan enter  this is for id-->
+    <span id="mainSpan"></span>
+    <!-- div.redBg.blackBorder.anotherClass enter    this is a shortcut  -->
+    <div class="redBg blackBorder anotherClass"></div>
+    <!-- Emmet taked div tag as default -->
+    <!-- .blackBackground enter  -->
+    <div class="blackBackground"></div>
+
+    <!-- creating mutiple lements using emmet  -->
+    <!-- span.class1.class2.class3*4 enter   then use tab to easily navigate and write  -->
+    <span class="class1 class2 class3">first</span>
+    <span class="class1 class2 class3">second</span>
+    <span class="class1 class2 class3">third</span>
+    <span class="class1 class2 class3">fourth</span>
+
+    <!-- for spacing -->
+    <p>this is a &nbsp; paragraph</p>
+    <!-- these are all HTML entities -->
+    <p>this is how we write a paragraph &lt;p&gt; &pound; &copy;</p>
+    <p>this is a empty character &#8203;</p>
+
+    <!-- Semantic tags -->
+    <details>
+        <summary>Who am I</summary>
+        Orewa Zephyrus
+        Orewa Zephyrus
+        Orewa Zephyrus
+        Orewa Zephyrus
+    </details>
+
+    <!-- The begining of css  -->
+    <h3>This is the start of css</h3>
+    <!-- this is inline css  -->
+    <p id="red">lets see what we can do</p>
+    <p class="pink bgblue">lets see what we can do</p>
+    <p style="color: aqua; background-color: black;">lets see what we can do</p>
+    <footer>this is my footer</footer>
+
+    <!-- for fonts go to google fonts -->
+
+    <p id="unique">mai hu unique</p>
+    <p id="unique2">MINATO</p>
+
+    <div class="container">
+        <h3 class="small">This is ze heading</h3>
+        <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quos quam neque sunt tenetur reiciendis consectetur! Ratione animi reiciendis, enim quidem nostrum officiis quis asperiores possimus, nobis dolorem provident, aperiam necessitatibus molestias? Sint, officia.</p>
+    </div>
+    <div class="container">
+        <h3 class="small">This is ze heading</h3>
+        <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quos quam neque sunt tenetur reiciendis consectetur! Ratione animi reiciendis, enim quidem nostrum officiis quis asperiores possimus, nobis dolorem provident, aperiam necessitatibus molestias? Sint, officia.</p>
+    </div>
+    <div class="container">
+        <h3 class="small">This is ze heading</h3>
+        <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quos quam neque sunt tenetur reiciendis consectetur! Ratione animi reiciendis, enim quidem nostrum officiis quis asperiores possimus, nobis dolorem provident, aperiam necessitatibus molestias? Sint, officia.</p>
+    </div>
+
+    <!-- creating a navigation bar -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search this website">
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <header class="top">
+        <img src="https://yt3.ggpht.com/a/AATXAJzz36QGTmIGDBre3yBQfbAcDUj5Hke43-MHw0rP=s100-c-k-c0xffffffff-no-rj-mo" alt="">
+        <h3>welcome to my channel</h3>
+    </header>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    <div class="parent">
+        <div class="box" id="box5">5</div>
+    </div>
+    <div class="parent">
+        <!-- div.bing#bing$*4 the $ will give 1,2,3,4..... -->
+        <div class="bing" id="bing1"></div>
+        <div class="bing" id="bing2"></div>
+        <div class="bing" id="bing3"></div>
+        <div class="bing" id="bing4"></div>
+    </div>
+    <!-- THIS IS FLEXBOX -->
+    <div class="flexbox">
+        <div class="itm" id="item1">First Box</div>
+        <div class="itm" id="item2">Second Box</div>
+        <div class="itm" id="item3">Third Box</div>
+        <!-- <div class="itm" id="item4">Fourth Box</div>
+        <div class="itm" id="item5">Fifth Box</div>
+        <div class="itm" id="item6">Sixth Box</div> -->
+    </div>
+</body>
+</html>

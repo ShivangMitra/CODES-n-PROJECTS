@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size units</title>
+</head>
+<style>
+    html{
+        font-size: 25px;
+    }
+    .container{
+        /* width: 400px; */
+        /* height: 344px; */
+        /* this will take the height of the complete view port i.e. all the screen that you can see  */
+        height: 100vh;
+        /* this will take the complete view port width  */
+        /* changing value of 100 will ofc change accordingly  */
+        width: 100vw;
+        border: 2px solid red;
+        font-size: 10px;
+    }
+    h1{
+        text-align: center;
+    }
+    #first{
+        /* this means it will take 10 times the font of its parent  */
+        /* font-size: 3em; */
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    #second{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        /* rem changes its size the times accordin to the size that the base html has  */
+        /* font-size: 3rem;
+        padding: 3rem; */
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 id="first">This is first heading</h1>
+        <h1 id="second">This is second heading</h1>
+        <h1 id="third">This is third heading</h1>
+    </div>
+</body>
+</html>
