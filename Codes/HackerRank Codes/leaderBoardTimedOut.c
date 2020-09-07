@@ -26,39 +26,19 @@ int main()
 }
 int* climbingLeaderboard(int *scores, int *alice)
 {
-    int pos=1;
-    for(int i=0;i<n;i++)
-    {
-        if(scores[i]!=scores[i+1])
-        pos++;
-    }
-
     int *res;
-    int p=n-1;
     res=(int*)malloc(m*sizeof(int));
     for(int i=0;i<m;i++)
     {
-        for(int j=p;j>=0;j--)
+        int pos=1;
+        for(int j=0;j<n;j++)
         {
-            if(pos==1)
-            {
-                break;
-            }
-            else if(alice[i]<scores[j])
-            {
-                p=j;
-                break;
-            }
-            else if(alice[i]==scores[j])
-            {
-                p=j;
-                pos--;
-                break;
-            }
-            else if((j==(n-1)) || (scores[j]!=scores[j-1]))
-            {
-                pos--;
-            }
+            if(scores[j]!=scores[j-1] && j!=0)
+            pos++;
+            if(alice[i]>=scores[j])
+            break;
+            if(j==(n-1))
+            pos++;
         }
         res[i]=pos;
     }
