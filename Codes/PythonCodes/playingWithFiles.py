@@ -22,8 +22,24 @@
 # a = f.write("Mai mast launda hu\n")
 # print(a)
 
-f = open("testText.txt", "r+")
-print(f.read())
-f.write("Dhanyawaad")
+# f = open("testText.txt", "r+")
+# print(f.read())
+# f.write("Dhanyawaad")
 
-f.close()
+# f = open("testText.txt")
+# print(f.tell())
+# print(f.readline())
+# print(f.tell())
+# f.seek(0)
+# print(f.readline())
+# print(f.tell())
+
+# f = open("testText.txt", "rt")
+#
+# f.close()
+
+#the above is same as
+
+with open("testText.txt") as f:
+    a = f.read(4)
+    print(a)
