@@ -27,9 +27,24 @@ class Employee:
     def printgood(string):
         print("this is good " + string)
 
+
+class Programmer(Employee):
+
+    def __init__(self, name, salary, role, languages):
+        self.name = name
+        self.salary = salary
+        self.role = role
+        self.languages = languages
+
+    def printprog(self):
+        return f"The Programmer's name is {self.name} - Salary is {self.salary} and role is {self.role} the languages are {self.languages}"
+
+
 harry = Employee("Harry", 455, "Instructor")
 rohan = Employee("Rohan", 45500, "CEO")
-karan = Employee.from_dash("Karan-480-Student")
+# karan = Employee.from_dash("Karan-480-Student")
+shubham = Programmer("Shubham", 555, "Programmer", ["python"])
+karan = Programmer("Karan", 777, "Programmer", ["python", "cpp"])
 
 # harry.name = "Harry"
 # harry.salary = 455
@@ -47,4 +62,7 @@ karan = Employee.from_dash("Karan-480-Student")
 
 # print(karan.salary)
 
-karan.printgood("Karan")
+# karan.printgood("Karan")
+
+
+print(karan.printprog())
