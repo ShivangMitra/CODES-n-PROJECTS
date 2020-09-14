@@ -21,3 +21,5 @@ class Rectangle(Shape):
 
 rect1 = Rectangle()
 print(rect1.printarea())
+
+#you cannot make objects of abstract base class
