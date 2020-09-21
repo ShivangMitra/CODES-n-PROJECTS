@@ -1,0 +1,2 @@
+Shivang, 1234567890, Male, 2345678901, PayTm, 1
+Chintu, 234, Male, 567, Cash, 0
