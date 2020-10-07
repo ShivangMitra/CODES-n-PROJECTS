@@ -11,7 +11,7 @@ def hit(key):
 def isCollide(data):
     for i in range(710, 860):
         for j in range(235, 240):
-            if data[i, j] > 100:
+            if (data[i, j] == 172) or (data[i, j] == 72):
                 hit("down")
                 time.sleep(0.3)
                 pyautogui.keyUp("down")
@@ -19,7 +19,7 @@ def isCollide(data):
 
     for i in range(700, 850):
         for j in range(275, 280):
-            if data[i, j] > 100:
+            if (data[i, j] == 172) or (data[i, j] == 72):
                 hit("up")
                 return
     return
