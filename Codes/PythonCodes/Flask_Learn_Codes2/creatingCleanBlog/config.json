@@ -1,0 +1,16 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/codegodzephyrus",
+    "prod_uri": "mysql://root:@localhost/codegodzephyrus",
+    "fb_url": "https://www.facebook.com/",
+    "tw_url": "https://twitter.com/login?lang=en",
+    "gh_url": "https://github.com/",
+    "blog_name": "The Quantum Blade",
+    "author_name": "CodeGodZephyrus",
+    "sub_heading": "A Blog destined to be an Anime",
+    "gmail-user": "jitaplu@gmail.com",
+    "gmail-password": "!7jitaplu!07"
+  }
+}
