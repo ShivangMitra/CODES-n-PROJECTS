@@ -16,6 +16,7 @@
     "no_of_posts": 5,
     "login_image": "login.svg",
     "admin_user": "zephyrus",
-    "admin_password": "tumChintuHo"
+    "admin_password": "tumChintuHo",
+    "upload_location": "C:\\CODE_n_PROJECTS\\Codes\\PythonCodes\\Flask_Learn_Codes2\\creatingCleanBlog\\static"
   }
 }
