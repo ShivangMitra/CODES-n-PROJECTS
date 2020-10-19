@@ -1,0 +1,14 @@
+{
+  "name": "npm_learn",
+  "version": "1.0.0",
+  "description": "This is the most epic package",
+  "main": "npm_learn.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "awesome"
+  ],
+  "author": "Zephyrus",
+  "license": "ISC"
+}
