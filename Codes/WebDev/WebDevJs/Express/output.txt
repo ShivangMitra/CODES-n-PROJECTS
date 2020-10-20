@@ -1,0 +1,2 @@
+The Weapon is M4A1-S, the skin name is Hyper Beast, the required float is 0.069, client's favorite player is Xyp9x, more about the client: Entry Fragger
+The Weapon is AWP, the skin name is Dragon Lore, the required float is 0, client's favorite player is Simple, more about the client: Awper
