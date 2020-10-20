@@ -8,6 +8,20 @@ font-family: 'ZCOOL QingKe HuangYou', cursive; */
     padding: 0;
 }
 
+#logo{
+    margin-left: 65px;
+    margin-right: 300px;
+    display: flex;
+    color: white;
+    align-items: center;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+#logo img{
+    height: 34px;
+    filter: invert();
+}
+
 #navbar{
     top: 0px;
     position: sticky;
@@ -19,7 +33,7 @@ font-family: 'ZCOOL QingKe HuangYou', cursive; */
 #navbar ul{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 #navbar li{
@@ -58,6 +72,54 @@ font-family: 'ZCOOL QingKe HuangYou', cursive; */
     padding: 5px;
 }
 
+#missionSection{
+    /* background-color: rgb(177, 239, 255); */
+    height: 500px;
+}
+
+#missionSection h2{
+    font-family: 'Trade Winds', cursive;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 28px;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    height: 250px;
+    width: 30%;
+    margin: 40px 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card h3{
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.card-box{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img img{
+    margin: 17px;
+    height: 160px
+}
+
+.card-content{
+    font-size: 25px;
+}
+
 #sponsorsSection{
     height: 500px;
 }
@@ -65,6 +127,7 @@ font-family: 'ZCOOL QingKe HuangYou', cursive; */
 #sponsorsSection h2{
     font-family: 'Trade Winds', cursive;
     text-align: center;
+    padding-top: 12px;
 }
 
 #footer{
