@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=Trade+Winds&family=ZCOOL+QingKe+HuangYou&display=swap');
+/* font-family: 'Lacquer', cursive;
+font-family: 'Trade Winds', cursive;
+font-family: 'ZCOOL QingKe HuangYou', cursive; */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar{
+    top: 0px;
+    position: sticky;
+    opacity: 0.9;
+    background-color: #343434;
+    padding: 15px 0px;
+}
+
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+}
+
+#navbar li a{
+    font-family: 'Trade Winds', cursive;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 7px 20px;
+}
+
+#navbar li a:hover{
+    color: #343434;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#introSection{
+    padding-bottom: 40px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 65px;
+    color: white;
+    height: 500px;
+    background: center / cover no-repeat url("/static/bg.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#introSection div.small{
+    font-size: 25px;
+    padding: 5px;
+}
+
+#sponsorsSection{
+    height: 500px;
+}
+
+#sponsorsSection h2{
+    font-family: 'Trade Winds', cursive;
+    text-align: center;
+}
+
+#footer{
+    height: 100px;
+}
