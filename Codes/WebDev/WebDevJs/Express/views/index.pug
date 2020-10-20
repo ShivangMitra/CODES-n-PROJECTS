@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Using plain HTML in Pug</title> -->
+    <title>#{title}</title>
+    style
+        include ../static/style.css
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Get any CSGO skin of your choice</h1>
+        <p>
+            | #{content}
+        </p>
+        <form action="/" id="contact">
+            <input type="text" name="weapon" id="weapon" placeholder="Weapon name">
+            <input type="text" name="skin" id="skin" placeholder="Skin name">
+            <input type="text" name="float" id="float" placeholder="Enter Float">
+            <input type="text" name="nametag" id="nametag" placeholder="Enter Nametag">
+            <textarea name="favplayer" id="favplayer" cols="30" rows="10" placeholder="Your favorite player"></textarea>
+            <textarea name="more" id="more" cols="30" rows="10" placeholder="Tell us about your playstyle"></textarea>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
