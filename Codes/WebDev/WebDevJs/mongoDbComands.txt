@@ -26,3 +26,11 @@ db.items.find({rating: {$gt: 3.5}, price:{$gt: 4000}})
 
 // or operator
 db.items.find({$or:[{rating: {$gt: 3.5}}, {price:{$gt: 4000}}]})
+
+// another filter parameter called projection
+db.items.find({rating: {$gte: 3.5}}, {rating: 1}) //this will only show the rating paraeter, means rating is true and rest of them is false
+
+// deleting items from the database
+db.items.deleteOne({price: 22000}) // if multiple match it will delete the first entry
+
+db.items.deleteMany({price: 22000}) // this  will delete all matching the filter object
