@@ -1,21 +1,13 @@
-doctype html
-html
-    head
-        title Zeph Dance Academy
-        style
-            include ../static/style.css
-    body
-        nav#navbar
-            ul
-                div#logo
-                    img(src="/static/img/logo.png")
-                    | ZDA
-                li #[a(href="/") Home]
-                li #[a(href="/") About]
-                li #[a(href="/") Services]
-                li #[a(href="/") Class Info]
-                li #[a(href="/") Contact Us]
+extends base.pug
 
+block script
+    script(src="/static/index.js")
+
+block style
+    style
+        include ../static/style.css
+
+block content
         section#introSection
             div Welcome to Zephyrus' Dance Academy
             div.small DANCE EAT SLEEP REPEAT
@@ -54,9 +46,3 @@ html
                     img(src="/static/img/logo2.png", alt="Sponsor Image", class="spImage")
                     img(src="/static/img/logo3.png", alt="Sponsor Image", class="spImage")
                     img(src="/static/img/logo4.png", alt="Sponsor Image", class="spImage")
-
-        footer#footer
-            | Copyright © 2020 ZephyrusDanceAcademy.com | All rights reserved
-
-        script
-            include ../static/index.js

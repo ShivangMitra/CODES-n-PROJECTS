@@ -78,10 +78,10 @@ font-family: 'ZCOOL QingKe HuangYou', cursive; */
 }
 
 #missionSection h2{
-    font-family: 'Trade Winds', cursive;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
     text-align: center;
     padding-top: 50px;
-    font-size: 28px;
+    font-size: 35px;
 }
 
 .cards{
@@ -121,15 +121,35 @@ font-family: 'ZCOOL QingKe HuangYou', cursive; */
 }
 
 #sponsorsSection{
-    height: 500px;
+    background-color: rgb(255, 180, 167);
+    height: 400px;
 }
 
 #sponsorsSection h2{
-    font-family: 'Trade Winds', cursive;
+    font-size: 35px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
     text-align: center;
     padding-top: 12px;
 }
 
+#sponsors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.spImage{
+    margin: 25px;
+    height: 200px;
+}
+
 #footer{
-    height: 100px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    color: white;
+    background-color: #343434;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
