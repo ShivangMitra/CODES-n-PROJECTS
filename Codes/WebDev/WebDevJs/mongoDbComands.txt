@@ -1,0 +1,28 @@
+// see all the dbs on system
+show dbs
+
+// how to know which db you are working on
+db
+
+// use or make a new database
+use zephKart
+
+// inserting data in mongoDb
+db.items.insertOne({name: "Samsung 30s", price: 22000, rating: 4.5, qty: 233, sold: 98})
+
+db.items.insertMany([{name: "Oppo 30s", price: 27000, rating: 4.5, qty: 233, sold: 198}, {name: "Moto 30s", price: 29000, rating: 3.5, qty: 133, sold: 598}, {name: "Realme 80s", price: 129000, rating: 2.5, qty: 633, sold: 98}])
+
+// find items in database
+db.items.find()
+
+// Query the database by pasing a filter object to find
+db.items.find({rating: 3.5})
+db.items.find({rating: {$gte: 3.5}}) //greater than or equal to
+db.items.find({rating: {$gt: 3.5}}) //greater than
+db.items.find({rating: {$lt: 3.5}}) //less than
+
+// and operator
+db.items.find({rating: {$gt: 3.5}, price:{$gt: 4000}})
+
+// or operator
+db.items.find({$or:[{rating: {$gt: 3.5}}, {price:{$gt: 4000}}]})
