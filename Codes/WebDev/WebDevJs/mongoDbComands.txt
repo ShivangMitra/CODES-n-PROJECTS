@@ -34,3 +34,14 @@ db.items.find({rating: {$gte: 3.5}}, {rating: 1}) //this will only show the rati
 db.items.deleteOne({price: 22000}) // if multiple match it will delete the first entry
 
 db.items.deleteMany({price: 22000}) // this  will delete all matching the filter object
+
+// insert naother collection into the database
+db.chintuCollection.insertOne({a: 69}) // this will create a new collection with the name chintuCollection
+
+// see all the collections in the database
+show colections
+
+// to update any document in the database
+db.items.updateOne({name: "Moto 30s"},{$set: {price: 2}}) // this takes two objects as parameters, first oneis filter and the second one is the property that you want to update
+
+db.items.updateMany({name: "Moto 30s"},{$set: {price: 2, rating: 1}})
