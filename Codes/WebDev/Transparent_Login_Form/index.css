@@ -1,0 +1,85 @@
+/* pexels.com */
+/* fontawesome.com */
+
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=Trade+Winds&family=ZCOOL+QingKe+HuangYou&display=swap');
+/* font-family: 'Lacquer', cursive;
+font-family: 'Trade Winds', cursive;
+font-family: 'ZCOOL QingKe HuangYou', cursive; */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url(bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.container h1{
+    /* color: rgb(186 46 242); */
+    font-family: 'Trade Winds', cursive;
+    font-size: 40px;
+    border-bottom: 2px solid rgb(186 46 242);
+    padding: 0px 20px;
+    margin-bottom: 45px;
+}
+
+.box{
+    display: flex;
+    margin: 10px;
+    border-bottom: 2px solid rgb(186 46 242);
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    width: 35%
+}
+
+.box input{
+    color: rgb(186 46 242);
+    /* border-radius: 5px; */
+    border: none;
+    background: none;
+    outline: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 95%;
+    font-size: 20px;
+    margin: 10px;
+    padding: 0px 10px;
+    /* opacity: 0; */
+}
+
+.btn{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    outline: none;
+    width: 10%;
+    font-size: 15px;
+    background-color: black;
+    color: rgb(186 46 242);
+    border: 2px solid rgb(186 46 242);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 25px;
+    font-weight: bold;
+    background: none;
+
+    transition-property: color,border;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+}
+
+.btn:hover{
+    color: white;
+    border: 2px solid white;
+}
