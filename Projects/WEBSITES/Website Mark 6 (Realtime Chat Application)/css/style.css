@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/* font-family: 'Ubuntu', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(#2d3943, black);
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    align-items: center;
+}
+
+nav h1{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    font-size: 30px;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+}
+
+.container{
+    background-color: rgba(128, 128, 128, 0.178);
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    margin: 0px 150px;
+    overflow-y: auto;
+}
+
+.message{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    background-color: #037e78;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.left{
+    margin-right: auto;
+}
+
+.right{
+    margin-left: auto;
+}
+
+.send{
+    height: 87px;
+    display: flex;
+    justify-content: center;
+}
+
+.send input{
+    background: none;
+    border: none;
+    color: #037e78;
+    border-bottom: 2px solid #037e78;
+    outline: none;
+    padding: 0px 5px;
+    margin: 30px;
+    font-size: 20px;
+    width: 500px;
+}
+
+.btn{
+    border: 2px solid #037e78;
+    color: #037e78;
+    margin: 10px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    transition-property: border, color;
+    transition-duration: 0.25s;
+}
+
+.btn:hover{
+    border: 2px solid white;
+    color: white;
+}
