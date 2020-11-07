@@ -9,7 +9,7 @@
     <title>SAMPLE</title>
 
     <style>
-        body{
+        body {
             background-color: #343434;
             color: white;
         }
@@ -58,6 +58,19 @@
         <div id="content"></div>
     </div>
 
+    <div class="container">
+        <h1>Option to set alarm</h1>
+
+        <form>
+            <div class="form-group">
+                <label for="alarm">Set Alarm</label>
+                <input type="text" class="form-control" id="alarm" name="alarm" placeholder="Enter time yyyy-mm-dd hh-mm-ss">
+                <small id="alarmHelp" class="form-text text-muted">We'll never share your Alarm lmao</small>
+            </div>
+            <button id="alarmSubmit" type="submit" class="btn btn-primary">Set Alarm</button>
+        </form>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -82,6 +95,9 @@
 <!-- <script src="js/fetchapi.js"></script> -->
 <!-- <script src="js/asyncNawait.js"></script> -->
 <!-- <script src="js/errorHandling.js"></script> -->
-<script src="js/regEx.js"></script>
+<!-- <script src="js/regEx.js"></script> -->
+<!-- <script src="js/iterators.js"></script> -->
+<!-- <script src="js/generators.js"></script> -->
+<script src="js/alarm.js"></script>
 
 </html>
