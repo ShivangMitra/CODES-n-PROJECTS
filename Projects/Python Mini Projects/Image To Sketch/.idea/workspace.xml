@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8ad7536-327a-495c-bad2-c2f82547f56d" name="Default Changelist" comment="" />
+    <list default="true" id="9576e682-a5e3-48ec-8ddc-cdeb11e91cbe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Image To Sketch.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgToSketch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Indian Flag/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Indian Flag/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1k666BTA62yI4p4M6a5a54YG9YX" />
+  <component name="ProjectId" id="1k6HjzZdlm1nvC5MrvfJPfVFDeP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -36,8 +44,8 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="flag" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Indian Flag" />
+    <configuration name="imgToSketch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Image To Sketch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -48,7 +56,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flag.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/imgToSketch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -59,7 +67,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.flag" />
+        <item itemvalue="Python.imgToSketch" />
       </list>
     </recent_temporary>
   </component>
@@ -68,11 +76,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e8ad7536-327a-495c-bad2-c2f82547f56d" name="Default Changelist" comment="" />
-      <created>1605008515765</created>
+      <changelist id="9576e682-a5e3-48ec-8ddc-cdeb11e91cbe" name="Default Changelist" comment="" />
+      <created>1605014259191</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605008515765</updated>
+      <updated>1605014259191</updated>
     </task>
     <servers />
   </component>
