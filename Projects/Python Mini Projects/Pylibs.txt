@@ -1,1 +1,7 @@
 instabot
+fpdf
+better-profanity
+speedtest-cli
+googletrans
+PyDictionary
+phonenumbers
