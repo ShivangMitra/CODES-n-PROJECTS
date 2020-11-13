@@ -50,28 +50,67 @@
 <?php
     //super global $_
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $name = $_POST["name"];
         $email = $_POST["email"];
-        $password = $_POST["pass"];
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> Your email ' . $email . " and password " . $password . ' has been submitted.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>';
+        $concern = $_POST["concern"];
+
+        //connecting to database
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "contacts";
+
+        //create a connection
+        // $conn = mysqli_connect($servername, $username, $password);
+        $conn = mysqli_connect($servername, $username, $password, $database);
+
+
+        //die if connection was not successful
+        if(!$conn){
+            die("Sorry failed to connect: " . mysqli_connect_error());
+        }
+        else{
+            //Submitting to database
+            $sql = "INSERT INTO `contactus` (`name`, `email`, `concern`, `dt`) VALUES ('$name', '$email', '$concern', current_timestamp())";
+
+            $result = mysqli_query($conn, $sql);
+
+            //check for the insertion
+            if($result){
+                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Holy guacamole!</strong> Your concern has been submitted successfully!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>';
+            }
+            else{
+                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Holy guacamole!</strong> Your concern has not been submitted due to ERROR: ' . mysqli_error($conn) . '
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>';
+            }
+        }
     }
 ?>
 
 <div class="container my-3">
-<h1>Please enter your email and password</h1>
+<h1>Contact us for your concerns</h1>
     <form action="/php_learn_codes/_GET_POST.php" method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
     <div class="form-group">
         <label for="email">Email address</label>
         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
-        <label for="pass">Password</label>
-        <input type="password" class="form-control" id="pass" name="pass">
+        <label for="concern">Concern</label>
+        <textarea name="concern" id="concern" cols="30" rows="10" class="form-control"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
