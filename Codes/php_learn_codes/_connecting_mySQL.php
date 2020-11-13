@@ -46,18 +46,77 @@ else{
 // }
 
 
-//inserting data in db
-$sql = "INSERT INTO `trip` (`name`, `dest`) VALUES ('Chintu', 'Mirjapur')";
-// $sql = "INSERT INTO `trip` (`name`, `dest`) VALUES ('$name', '$destination')";
+// //inserting data in db
+// $sql = "INSERT INTO `trip` (`name`, `dest`) VALUES ('Pintu', 'Ghar')";
+// // $sql = "INSERT INTO `trip` (`name`, `dest`) VALUES ('$name', '$destination')";
 
+// $result = mysqli_query($conn, $sql);
+
+// //check for the insertion
+// if($result){
+//     echo "insertion successfully!";
+// }
+// else{
+//     echo "inseertion was not successfully<br>Error: " . mysqli_error($conn);
+// }
+
+
+// //reading data from dd
+// $sql = "SELECT * FROM `trip`";
+// $result = mysqli_query($conn, $sql);
+
+// $num = mysqli_num_rows($result);
+
+// if($num > 0){
+//     while($row = mysqli_fetch_assoc($result)){
+//         // echo var_dump($row);
+//         echo "hello " . $row['name'] . " from " . $row['dest'];
+//         echo "<br>";
+//     }
+// }
+
+
+// //updating data in db
+// $sql = "SELECT * FROM `trip` WHERE `dest` = 'Mirjap'";
+// $result = mysqli_query($conn, $sql);
+
+// $num = mysqli_num_rows($result);
+
+// if($num > 0){
+//     while($row = mysqli_fetch_assoc($result)){
+//         // echo var_dump($row);
+//         echo "hello " . $row['name'] . " from " . $row['dest'];
+//         echo "<br>";
+//     }
+// }
+
+// $sql = "UPDATE `trip` SET `name` = 'Mika' WHERE `dest` = 'Mirjap'";
+// $result = mysqli_query($conn, $sql);
+
+// echo var_dump($result);
+
+// $aff = mysqli_affected_rows($conn);
+// echo "number of rows affected: $aff";
+
+// if($result){
+//     echo "We updated the record successfully";
+// }
+// else{
+//     echo "We could not update the record";
+// }
+
+
+//deleting records from db
+$sql = "DELETE FROM `trip` WHERE `trip`.`sno` = 2";
+// $sql = "DELETE FROM `trip` WHERE `dest` = 'Mirjap'";
+// $sql = "DELETE FROM `trip` WHERE `dest` = 'Mirjap' LIMIT 3";
 $result = mysqli_query($conn, $sql);
 
-//check for the insertion
 if($result){
-    echo "insertion successfully!";
+    echo "Deleted record";
 }
 else{
-    echo "inseertion was not successfully<br>Error: " . mysqli_error($conn);
+    echo "Could not delete record";
 }
 
 ?>
