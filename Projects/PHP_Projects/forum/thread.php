@@ -15,8 +15,8 @@
 
 <body>
 
-    <?php include "partials/_header.php"; ?>
     <?php include "partials/_dbconnect.php"; ?>
+    <?php include "partials/_header.php"; ?>
 
 
     <?php
@@ -114,7 +114,7 @@
 ?>
 
 
-    <div class="container">
+    <div class="container mb-5">
         <h1 class="py-2">Discussions</h1>
 
         <?php

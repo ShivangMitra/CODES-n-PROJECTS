@@ -18,14 +18,17 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categories
+                    Top Categories
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+
+                    $sql = "SELECT category_name, category_id FROM `categories` LIMIT 5";
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo '<a class="dropdown-item" href="threadlist.php?catid='. $row['category_id'] .'">'. $row['category_name'] .'</a>';
+                    }
+
+                echo '</div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/forum/contact.php" tabindex="-1">Contact</a>
@@ -33,16 +36,16 @@
             </ul>';
 
             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                echo '<form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                echo '<form class="form-inline my-2 my-lg-0" action="search.php" method="get">
+                        <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
                         <p class="text-light my-0 mx-2">Welcome '. $_SESSION['userEmail'] .'</p>
                         <a href="partials/_logout.php" class="btn btn-outline-success">Logout</a>
                     </form>';
             }
             else{
-                echo'<form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                echo'<form class="form-inline my-2 my-lg-0" action="search.php" method="get">
+                        <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                     <div class="mx-2">

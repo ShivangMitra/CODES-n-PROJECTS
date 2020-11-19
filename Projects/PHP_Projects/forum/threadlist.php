@@ -15,8 +15,8 @@
 
 <body>
 
-    <?php include "partials/_header.php"; ?>
     <?php include "partials/_dbconnect.php"; ?>
+    <?php include "partials/_header.php"; ?>
 
     <?php
         $id = $_GET['catid'];
@@ -111,7 +111,7 @@
 
 ?>
 
-    <div class="container my-3">
+    <div class="container my-3 mb-5">
         <h1 class="py-2">Browse Questions</h1>
 
         <?php
