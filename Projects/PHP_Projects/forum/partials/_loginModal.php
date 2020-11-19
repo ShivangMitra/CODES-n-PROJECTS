@@ -11,14 +11,16 @@
             <form action="/forum/partials/_handleLogin.php" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="loginEmail">Email address</label>
-                        <input type="email" class="form-control" id="loginEmail" name="loginEmail" aria-describedby="emailHelp">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small>
+                        <label for="loginEmail">Username</label>
+                        <input type="text" class="form-control" id="loginEmail" name="loginEmail"
+                            aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="loginPassword">Password</label>
                         <input type="password" class="form-control" id="loginPassword" name="loginPassword">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone
+                            else.
+                        </small>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </div>

@@ -38,7 +38,15 @@
             $th_title = $_POST['title'];
             $th_desc = $_POST['desc'];
 
-            $sql = "INSERT INTO `threads` (`thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`, `timestamp`) VALUES ('$th_title', '$th_desc', '$id', '0', current_timestamp());";
+            $th_title = str_replace("<", "&lt;", $th_title);
+            $th_title = str_replace(">", "&gt;", $th_title);
+
+            $th_desc = str_replace("<", "&lt;", $th_desc);
+            $th_desc = str_replace(">", "&gt;", $th_desc);
+
+            $user_id = $_POST['sno'];
+
+            $sql = "INSERT INTO `threads` (`thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`, `timestamp`) VALUES ('$th_title', '$th_desc', '$id', '$user_id', current_timestamp())";
             $result = mysqli_query($conn, $sql);
             $showAlert = true;
             if($showAlert){
@@ -72,23 +80,36 @@
     </div>
     <!-- FORUM TITLE CONTAINER ENDS HERE -->
 
-    <div class="container my-3">
-        <h1 class="py-2">Start a Discussion</h1>
-        <!-- <form action="/forum/threadlist.php?catid=<?php echo $id?>" method="post"> -->
-        <!-- <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post"> -->
-        <form action="<?php echo $_SERVER['REQUEST_URI'];?>" method="post">
-            <div class="form-group">
-                <label for="title">Problem</label>
-                <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
-                <small id="emailHelp" class="form-text text-muted">Keep your title as crisp as possible</small>
-            </div>
-            <div class="form-group">
-                <label for="desc">Elaborate Your Concern</label>
-                <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-        </form>
-    </div>
+<?php
+
+    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+        echo'<div class="container my-3">
+                <h1 class="py-2">Start a Discussion</h1>
+                <!-- <form action="/forum/threadlist.php?catid=<?php echo $id?>" method="post"> -->
+                <!-- <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post"> -->
+                <form action="' . $_SERVER['REQUEST_URI'] . '" method="post">
+                    <div class="form-group">
+                        <label for="title">Problem</label>
+                        <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
+                        <small id="emailHelp" class="form-text text-muted">Keep your title as crisp as possible</small>
+                    </div>
+                    <input type="hidden" name="sno" value="'. $_SESSION['user_id'] .'">
+                    <div class="form-group">
+                        <label for="desc">Elaborate Your Concern</label>
+                        <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>';
+    }
+    else{
+        echo '<div class="container">
+                <h1 class="py-2">Start a Discussion</h1>
+                <p class="lead">Login to start a discussion</p>
+            </div>';
+    }
+
+?>
 
     <div class="container my-3">
         <h1 class="py-2">Browse Questions</h1>
@@ -104,11 +125,16 @@
                 $thread_desc = $row['thread_desc'];
                 $thread_time = $row['timestamp'];
                 $id = $row['thread_id'];
+                $thread_user_id = $row['thread_user_id'];
+                
+                $sql2 = "SELECT user_email FROM `users` WHERE user_id='$thread_user_id'";
+                $result2 = mysqli_query($conn, $sql2);
+                $row2 = mysqli_fetch_assoc($result2);
             
                 echo '<div class="media my-3">
                     <img src="img/user_default_img.jpg" width="64px" height="64px" class="mr-3" alt="...">
                     <div class="media-body">
-                        <p class="font-weight-bold my-0">Anonymous at '. $thread_time .'</p>
+                        <p class="font-weight-bold my-0">'. $row2['user_email'] .' at '. $thread_time .'</p>
                         <h5 class="mt-0"><a href="thread.php?threadid='. $id .'">'. $thread_name .'</a></h5>
                         '. $thread_desc .'
                     </div>

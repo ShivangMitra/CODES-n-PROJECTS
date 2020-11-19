@@ -27,6 +27,12 @@
             $thread_name = $row['thread_title'];
             $thread_desc = $row['thread_desc'];
             $timestamp = $row['timestamp'];
+            $thread_user_id = $row['thread_user_id'];
+
+            $sql2 = "SELECT user_email FROM `users` WHERE user_id='$thread_user_id'";
+            $result2 = mysqli_query($conn, $sql2);
+            $row2 = mysqli_fetch_assoc($result2);
+            $posted_by = $row2['user_email'];
         }
     ?>
 
@@ -39,7 +45,12 @@
         if($method == 'POST'){
             $comment = $_POST['comment'];
 
-            $sql = "INSERT INTO `comments` (`comment_content`, `thread_id`,`comment_by`, `comment_time`) VALUES ('$comment', '$id', '0', current_timestamp());";
+            $comment = str_replace("<", "&lt;", $comment);
+            $comment = str_replace(">", "&gt;", $comment);
+
+            $user_id = $_POST['sno'];
+
+            $sql = "INSERT INTO `comments` (`comment_content`, `thread_id`,`comment_by`, `comment_time`) VALUES ('$comment', '$id', '$user_id', current_timestamp())";
             $result = mysqli_query($conn, $sql);
             $showAlert = true;
             if($showAlert){
@@ -68,27 +79,39 @@
                 Do not post “offensive” posts, links or images.
                 Do not cross post questions.
                 Remain respectful of other members at all times.</p>
-            <p>Posted by: <b>Anonymous</b></p>
+            <p>Posted by: <em><?php echo $posted_by?></em></p>
             <p>On: <b><?php echo $timestamp?></b></p>
         </div>
     </div>
     <!-- FORUM TITLE CONTAINER ENDS HERE -->
 
+<?php
 
-    <div class="container my-3">
-        <h1 class="py-2">Post a comment</h1>
-        <!-- <form action="/forum/threadlist.php?catid=<?php echo $id?>" method="post"> -->
-        <!-- <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post"> -->
-        <form action="<?php echo $_SERVER['REQUEST_URI'];?>" method="post">
+    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+        echo '<div class="container my-3">
+                <h1 class="py-2">Post a comment</h1>
+                <!-- <form action="/forum/threadlist.php?catid=<?php echo $id?>" method="post"> -->
+                <!-- <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post"> -->
+                <form action="' . $_SERVER['REQUEST_URI'] . '" method="post">
+    
+                    <div class="form-group">
+                        <label for="comment">Type your comment</label>
+                        <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                        <input type="hidden" name="sno" value="'. $_SESSION['user_id'] .'">
+                    </div>
+                    <button type="submit" class="btn btn-success">Post Comment</button>
+    
+                </form>
+            </div>';
+    }
+    else{
+        echo '<div class="container">
+                <h1 class="py-2">Post a comment</h1>
+                <p class="lead">Login to post a comment</p>
+            </div>';
+    }
 
-            <div class="form-group">
-                <label for="comment">Type your comment</label>
-                <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-success">Post Comment</button>
-
-        </form>
-    </div>
+?>
 
 
     <div class="container">
@@ -102,14 +125,18 @@
             while($row = mysqli_fetch_assoc($result)){
                 $noResult = false;
                 $comment_content = $row['comment_content'];
-                // $comment_by = $row['comment_by'];
+                $comment_by = $row['comment_by'];
                 $comment_time = $row['comment_time'];
                 $id = $row['comment_id'];
+
+                $sql2 = "SELECT user_email FROM `users` WHERE user_id='$comment_by'";
+                $result2 = mysqli_query($conn, $sql2);
+                $row2 = mysqli_fetch_assoc($result2);
             
                 echo '<div class="media my-3">
                     <img src="img/user_default_img.jpg" width="64px" height="64px" class="mr-3" alt="...">
                     <div class="media-body">
-                        <p class="font-weight-bold my-0">Anonymous at '. $comment_time .'</p>
+                        <p class="font-weight-bold my-0">'. $row2['user_email'] .' at '. $comment_time .'</p>
                         '. $comment_content .'
                     </div>
                 </div>';
@@ -117,8 +144,8 @@
             if($noResult){
                 echo '<div class="jumbotron jumbotron-fluid">
                         <div class="container">
-                            <h1 class="display-4">No Threads Found</h1>
-                            <p class="lead"><b>Be the first to ask a question on this topic</b></p>
+                            <h1 class="display-4">No Comments Found</h1>
+                            <p class="lead"><b>Be the first to comment on this topic</b></p>
                         </div>
                     </div>';
             }
