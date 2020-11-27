@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: LoginPage(),
     );
   }
 }
@@ -62,6 +63,10 @@ class MyApp extends StatelessWidget {
 // }
 
 class MyHomePage extends StatefulWidget {
+  final String name;
+
+  MyHomePage(this.name);
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -71,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void newPost(String text){
     this.setState(() {
-      posts.add(new Post(text, "Zephyrus"));
+      posts.add(new Post(text, widget.name));
     });
   }
 
