@@ -1,0 +1,15 @@
+@media screen and (max-width: 1300px){
+    .navigation{
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .nav-left{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-right{
+        display: none;
+    }
+}

@@ -1,0 +1,17 @@
+.contact-content{
+    padding-top: 50px;
+    display: flex;
+    color: white;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(75, 75, 75, 0.527);
+}
+
+.contact-form{
+    height: 68vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
