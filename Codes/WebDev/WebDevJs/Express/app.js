@@ -5,6 +5,9 @@ const express = require("express")
 const path = require("path")
 const fs = require("fs")
 
+import {LocalStorage} from 'node-localstorage'
+var localStorage = new LocalStorage('./scratch')
+
 const app = express();
 const port = 80;
 
@@ -35,6 +38,7 @@ app.post("/", (req,res)=>{
     const params = {
         "message": "Your form has been submitted successfully"
     }
+    localStorage.setItem("submitted", true)
     res.status(200).render("index.pug", params)
 })
 
