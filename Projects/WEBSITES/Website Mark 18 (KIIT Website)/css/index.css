@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+.navbar-pos{
+    position: sticky;
+    top: 0;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.main-heading{
+    position: absolute;
+    z-index: 1;
+    color: rgb(0, 146, 0);
+    font-size: 100px;
+    top: 45px;
+    left: 470px;
+}
+
+.application{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron{
+    margin-bottom: 0px;
+}
+
+.events{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opacity{
+    opacity: 0.8;
+}
+
+.img-size{
+    height: 527px;
+}
+
+.img-size-2{
+    height: 250px;
+}
+
+.mykit-size{
+    font-size: 3rem;
+    color: rgb(0, 146, 0);
+}
+
+.mykit-size-2{
+    font-size: 2rem;
+    color: rgb(0, 146, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-admis-1{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    align-items: center;
+    background-image: linear-gradient(to right, rgba(0, 255, 170, 0.562), rgb(0, 255, 104));
+}
+
+.card-admis-2{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    align-items: center;
+    background-image: linear-gradient(to left, rgba(0, 255, 170, 0.562), rgb(0, 255, 104));
+}
+
+.youtube{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.youtube iframe{
+    margin-right: 165px;
+}
+
+.youtube a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.youtube a i{
+    transition: all 0.3s ease-in-out;
+}
+
+.youtube a i:hover{
+    color: rgb(0, 218, 0);
+}
+
+.youtube a span{
+    text-decoration: none;
+    color: rgb(0, 146, 0);
+    font-size: 25px;
+    margin-left: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.youtube a span:hover{
+    color: rgb(0, 218, 0);
+}
+
+footer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background-color: #343434;
+    color: white;
+}
+
+footer span{
+    margin-left: 50px;
+}
+
+.social{
+    margin-right: 50px;
+}
+
+.social a{
+    text-decoration: none;
+}
+
+.mykit-size-2:hover{
+    color: rgb(0, 218, 0);
+}
+
+.more-events{
+    display: flex;
+    align-items: center;
+}
+
+.more-events i{
+    font-size: 5rem;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.move-more-events{
+    display: flex;
+    align-items: center;
+    margin-left: 880px;
+}
+
+.more-news{
+    display: flex;
+    align-items: center;
+}
+
+.more-news i{
+    font-size: 5rem;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.move-more-news{
+    display: flex;
+    align-items: center;
+    margin-left: 880px;
+}
+
+.news-img-size{
+    height: 500px;
+}
+
+.carousel-caption{
+    color: rgb(0, 255, 0);
+    background-color: #343434;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.carousel-caption a{
+    text-decoration: none;
+    color: rgb(0, 255, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel-caption a:hover{
+    color: yellow;
+}
+
+#typeout{
+    position: absolute;
+    color: rgb(0, 218, 0);
+    font-size: 20px;
+    z-index: 1;
+    top: 180px;
+    left: 475px;
+}
+
+#typeout a{
+    text-decoration: none;
+    color: rgb(1, 146, 74);
+    font-size: 40px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* -- Typing Effect -- */
+
+/* @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); */
+
+/* #test {
+  border-right: solid 3px rgba(0,255,0,.75);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Source Code Pro', monospace;  
+  font-size: 28px;
+  color: black;
+  margin: 0 auto;
+} */
+
+/* Animation */
+/* #test {
+  animation: animated-text 4s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+} */
+
+/* text animation */
+
+/* @keyframes animated-text{
+  from{width: 0;}
+  to{width: 472px;}
+} */
+
+/* cursor animations */
+
+/* @keyframes animated-cursor{
+  from{border-right-color: rgba(0,255,0,.75);}
+  to{border-right-color: transparent;}
+} */
