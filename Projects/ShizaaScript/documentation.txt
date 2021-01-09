@@ -1,0 +1,26 @@
+print - chipkao
+chipkao : "Hello Duniya";
+chipkao : "Hello Duniya" + var + "lwehfuhwef";
+chipkao : "Hello Duniya" + (a + b / c) + "lwehfuhwef";
+chipkao : var;
+
+operators + - = < > % * / ^
+
+comments //  */ /*
+
+input - lagao
+lagao : "enter number - " + n + "lucky";
+
+conditional == && || != <= >=
+
+if - agar
+else if - warna
+else - nahitoh
+
+loops
+
+data types
+
+boolean = boobian
+blus
+blouse

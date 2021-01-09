@@ -1,0 +1,2 @@
+chipkao : "Hello Duniya ";
+chipkao : 2+4*3-6/(3+6)*2-5+2;
