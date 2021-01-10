@@ -141,17 +141,7 @@ else{
 
         <div class="overflew">
 
-            <div class="container-chat">
-                <!-- <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;"> -->
-                <p>Hello. How are you today?</p>
-                <span class="time-right">11:00</span>
-            </div>
-
-            <div class="container-chat darker">
-                <!-- <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;"> -->
-                <p>Hey! I'm fine. Thanks for asking!</p>
-                <span class="time-left">11:01</span>
-            </div>
+            <!-- messages here -->
 
         </div>
 
@@ -176,6 +166,19 @@ else{
 
     <script type="text/javascript">
 
+    setInterval(runFunction, 1000);
+
+    function runFunction()
+    {
+        $.post("htcont.php", {
+            room: '<?php echo $roomname; ?>'
+        },
+        function(data, status){
+            document.getElementsByClassName('overflew')[0].innerHTML = data;
+        }
+        )
+    }
+
     var input = document.getElementById("usermsg");
     input.addEventListener("keyup", function(event){
         event.preventDefault();
@@ -190,9 +193,6 @@ else{
                 text: clientmsg,
                 room: '<?php echo $roomname; ?>',
                 ip: '<?php echo $_SERVER["REMOTE_ADDR"] ?>'
-            },
-            function(data, status) {
-                document.getElementsByClassName('overflew')[0].innerHTML = data;
             });
         $("#usermsg").val("");
         return false;
