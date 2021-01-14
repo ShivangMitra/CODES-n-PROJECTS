@@ -1,0 +1,83 @@
+docker version
+docker run hello-world
+
+docker run redis
+docker run busybox
+
+docker run busybox echo hello world
+decker run busybox ping anywebsite.com
+docker run busybox sh
+sh - is a command processor
+
+docker run busybox ls - lists files inside busybox then exits back to terminal
+
+docker ps - containers that are running
+docker ps --all - shows container that are running plus the containers that are not
+
+docker stop CONTAINER_ID - to exit that container or stop it
+
+docker run = docker create + docker start - docker run is made of two commands
+
+docker crate hello-world - this creats a container but does not start it, it gives us a hash string
+
+docker start -a hash_string_here - this will start that perticular container
+-a in the above command gives/shows the output of that container
+-a - attach to the container and give the container's output to my terminal
+
+docker logs CONTAINER_ID - this shows whats goin on inside that container
+
+if by doing 'docker stop CONTAINER_ID' the process does not respond and does not stop then to forcefully stop it we use:
+docker kill CONTAINER_ID
+
+docker exec -i -t CONTAINER_ID sh - it will starta shell inside that container so that we can see whats actually inside the container
+ctrl+d to exit that shell inside the container
+-i means that what you write in the docker it runs inside that shell, make sure that the stuff I write is directed towards stdin of process
+-t means that it will show things in formatted form or prettified format
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATING A REDIS CUSTOM IMAGE
+
+Open vscode and create a file names "Dockerfile"
+contents of file
+****************
+#Step1 specify the base image
+FROM alpine //means bring the base image of alpine
+
+#Step2 Download and install dependencies
+RUN apk add --update redis // run this command in alpine
+
+#Step3 Setup the startup command
+CMD ["redis-server"]
+****************
+Then in cmd build the image
+docker build .
+it will complete all the steps and then provide you a CONTAINER_ID
+you can now run your image using that id
+docker run CONTAINER_ID
+you have created your custom container and redis is running
+------------------------------------------------------------------------------------------------------------------------------------------
+
+TAGGING IMAGES
+
+docker build -t r09zephyrus/redis:latest .
+-t means to add a tag
+r09zephyrus - docker user name comes here
+redis - then image name, it can be custom
+latest - version
+
+then we can run our image using
+docker run r09zephyrus/redis
+this will automatically pull the latest version
+if you want to pull a specific version then
+docker run r09zephyrus/redis:version_number_here
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+COMMIT
+
+docker commit -c 'CMD "redis-server"' CONTAINER_ID
+this means that whatever that is going on inthat container just take a snapshot of it and then run this command
+this will give a sha256 that we can use to run it
+docker run sha256
+ 
