@@ -1,0 +1,2 @@
+I am writing to file from shell
+another line
