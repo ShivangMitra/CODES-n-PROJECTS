@@ -7,7 +7,24 @@ import './App.css';
 // import  Counter from './components/Counter'
 // import  FunctionClick from './components/FunctionClick'
 // import  ClassClick from './components/ClassClick'
-import  EventBind from './components/EventBind'
+// import  EventBind from './components/EventBind'
+// import ParentComponent from './components/ParentComponent';
+// import UserGreeting from './components/UserGreeting';
+// import NameList from './components/NameList';
+// import Stylesheet from './components/Stylesheet';
+// import Inline from './components/Inline';
+// import './appStyles.css'
+// import styles from './appStyles.module.css'
+// import Form from './components/Form'
+// import LifecycleA from './components/LifecycleA';
+
+// import FragmentDemo from './components/FragmentDemo';
+// import Table from './components/Table';
+// import PureComp from './components/PureComp';
+// import ParentComp from './components/ParentComp';
+// import RefsDemo from './components/RefsDemo';
+// import FocusInput from './components/FocusInput';
+import FRParentInput from './components/FRParentInput';
 
 function App() {
   return (
@@ -39,7 +56,38 @@ function App() {
 
         {/* <ClassClick></ClassClick> */}
 
-        <EventBind></EventBind>
+        {/* <EventBind></EventBind> */}
+
+        {/* <ParentComponent></ParentComponent> */}
+
+        {/* <UserGreeting></UserGreeting> */}
+
+        {/* <NameList></NameList> */}
+
+        {/* <Stylesheet primary={true}></Stylesheet> */}
+
+        {/* <Inline></Inline> */}
+
+        {/* <h1 className="error">Error: This is a normal stylesheet</h1>
+        <h1 className={styles.success}>Success: This is a module stylesheet</h1> */}
+
+        {/* <Form></Form> */}
+
+        {/* <LifecycleA></LifecycleA> */}
+
+        {/* <FragmentDemo></FragmentDemo> */}
+
+        {/* <Table></Table> */}
+
+        {/* <PureComp></PureComp> */}
+
+        {/* <ParentComp></ParentComp> */}
+
+        {/* <RefsDemo></RefsDemo> */}
+
+        {/* <FocusInput></FocusInput> */}
+
+        <FRParentInput></FRParentInput>
 
     </div>
   );
