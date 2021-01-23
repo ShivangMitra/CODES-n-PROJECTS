@@ -24,70 +24,113 @@ import './App.css';
 // import ParentComp from './components/ParentComp';
 // import RefsDemo from './components/RefsDemo';
 // import FocusInput from './components/FocusInput';
-import FRParentInput from './components/FRParentInput';
+// import FRParentInput from './components/FRParentInput';
+// import PortalDemo from './components/PortalDemo';
+// import Hero from './components/Hero';
+// import ErrorBoundary from './components/ErrorBoundary';
+// import ClickCounter from './components/ClickCounter';
+// import HoverCounter from './components/HoverCounter';
+// import User from './components/User';
+// import CounterTwo from './components/CounterTwo';
+// import HoverCounterTwo from './components/HoverCounterTwo';
+// import ClickCounterTwo from './components/ClickCounterTwo';
+// import ComponentC from './components/ComponentC';
+// import { UserProvider } from './components/userContext';
+// import PostList from './components/PostList';
+import PostForm from './components/PostForm';
 
 function App() {
   return (
     <div className="App">
-        {/* <Greet/>
+      {/* <Greet/>
         <Welcome/> */}
-        {/* <Hello/> */}
-        {/* <Greet name="chintu" job="programmer">bachhe hai iske</Greet>
+      {/* <Hello/> */}
+      {/* <Greet name="chintu" job="programmer">bachhe hai iske</Greet>
         <Greet name="pintu" job="developer"><button>munna hai iske</button></Greet>
         <Greet name="kintu" job="janator">babua hai iske</Greet> */}
 
-        {/* <Greet name="chintu" job="programmer">bachhe hai iske</Greet>
+      {/* <Greet name="chintu" job="programmer">bachhe hai iske</Greet>
         <Greet name="pintu" job="developer"><button>munna hai iske</button></Greet>
         <Greet name="kintu" job="janator">babua hai iske</Greet> */}
-        
-        {/* <Welcome name="chintu" job="programmer"></Welcome>
-        <Welcome name="pintu" job="developer"></Welcome>
-        <Welcome name="kintu" job="janator"></Welcome> */}
-        
-        {/* <Welcome name="chintu" job="programmer"></Welcome>
+
+      {/* <Welcome name="chintu" job="programmer"></Welcome>
         <Welcome name="pintu" job="developer"></Welcome>
         <Welcome name="kintu" job="janator"></Welcome> */}
 
-        {/* <Message></Message> */}
+      {/* <Welcome name="chintu" job="programmer"></Welcome>
+        <Welcome name="pintu" job="developer"></Welcome>
+        <Welcome name="kintu" job="janator"></Welcome> */}
 
-        {/* <Counter></Counter> */}
+      {/* <Message></Message> */}
 
-        {/* <FunctionClick></FunctionClick> */}
+      {/* <Counter></Counter> */}
 
-        {/* <ClassClick></ClassClick> */}
+      {/* <FunctionClick></FunctionClick> */}
 
-        {/* <EventBind></EventBind> */}
+      {/* <ClassClick></ClassClick> */}
 
-        {/* <ParentComponent></ParentComponent> */}
+      {/* <EventBind></EventBind> */}
 
-        {/* <UserGreeting></UserGreeting> */}
+      {/* <ParentComponent></ParentComponent> */}
 
-        {/* <NameList></NameList> */}
+      {/* <UserGreeting></UserGreeting> */}
 
-        {/* <Stylesheet primary={true}></Stylesheet> */}
+      {/* <NameList></NameList> */}
 
-        {/* <Inline></Inline> */}
+      {/* <Stylesheet primary={true}></Stylesheet> */}
 
-        {/* <h1 className="error">Error: This is a normal stylesheet</h1>
+      {/* <Inline></Inline> */}
+
+      {/* <h1 className="error">Error: This is a normal stylesheet</h1>
         <h1 className={styles.success}>Success: This is a module stylesheet</h1> */}
 
-        {/* <Form></Form> */}
+      {/* <Form></Form> */}
 
-        {/* <LifecycleA></LifecycleA> */}
+      {/* <LifecycleA></LifecycleA> */}
 
-        {/* <FragmentDemo></FragmentDemo> */}
+      {/* <FragmentDemo></FragmentDemo> */}
 
-        {/* <Table></Table> */}
+      {/* <Table></Table> */}
 
-        {/* <PureComp></PureComp> */}
+      {/* <PureComp></PureComp> */}
 
-        {/* <ParentComp></ParentComp> */}
+      {/* <ParentComp></ParentComp> */}
 
-        {/* <RefsDemo></RefsDemo> */}
+      {/* <RefsDemo></RefsDemo> */}
 
-        {/* <FocusInput></FocusInput> */}
+      {/* <FocusInput></FocusInput> */}
 
-        <FRParentInput></FRParentInput>
+      {/* <FRParentInput></FRParentInput> */}
+
+      {/* <PortalDemo></PortalDemo> */}
+
+      {/* <ErrorBoundary>
+        <Hero heroName="Ironman" ></Hero>
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Hero heroName="Doctor Strange" ></Hero>
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Hero heroName="Joker" ></Hero>
+      </ErrorBoundary> */}
+
+      {/* <ClickCounter name="Chintu" ></ClickCounter> */}
+      {/* <HoverCounter name="Pintu" ></HoverCounter> */}
+
+      {/* <ClickCounterTwo></ClickCounterTwo>
+      <HoverCounterTwo></HoverCounterTwo>
+      <User name={ (isLoggedIn) => isLoggedIn ? "Chintu" : "Guest" } ></User> */}
+
+      {/* <CounterTwo render={(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} ></ClickCounterTwo>)} ></CounterTwo>
+      <CounterTwo render={(count, incrementCount) => (<HoverCounterTwo count={count} incrementCount={incrementCount} ></HoverCounterTwo>)} ></CounterTwo> */}
+
+      {/* <UserProvider value="Chintu" >
+        <ComponentC></ComponentC>
+      </UserProvider> */}
+
+      {/* <PostList></PostList> */}
+
+      <PostForm></PostForm>
 
     </div>
   );
