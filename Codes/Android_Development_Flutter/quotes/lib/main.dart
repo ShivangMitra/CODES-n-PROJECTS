@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -23,6 +24,10 @@ class _QuoteListState extends State<QuoteList> {
         text: "The truth is rarely pure and never simple"),
   ];
 
+  // Widget quoteTemplate(quote) {
+  //   return QuoteCard(quote: quote);
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +39,16 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         children: quotes
-            .map((quote) => Text("${quote.text} - ${quote.author}"))
+            .map((quote) => QuoteCard(
+                  quote: quote,
+                  delete: () {
+                    setState(() {
+                      quotes.remove(quote);
+                    });
+                  },
+                ))
+            // .map((quote) => quoteTemplate(quote))
+            // .map((quote) => Text("${quote.text} - ${quote.author}"))
             .toList(),
       ),
     );
