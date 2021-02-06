@@ -4,6 +4,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 //my imports
 // import 'components/horizontal_listview.dart';
 import 'package:fashion_app/components/horizontal_listview.dart';
+import 'package:fashion_app/components/products.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -38,6 +39,7 @@ class _HomePageState extends State<HomePage> {
         animationDuration: Duration(seconds: 1),
         dotSize: 4.0,
         dotColor: Colors.red,
+        dotBgColor: Colors.red.withOpacity(0.5),
         indicatorBgPadding: 10.0,
       ),
     );
@@ -169,6 +171,18 @@ class _HomePageState extends State<HomePage> {
 
           //horizontal list view starts here
           HorizontalList(),
+
+          //padding
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Recent Products"),
+          ),
+
+          //grid view starts here
+          Container(
+            height: 320.0,
+            child: Products(),
+          )
         ],
       ),
     );
