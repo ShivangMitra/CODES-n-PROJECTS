@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//my imports
+import 'package:fashion_app/pages/product_details.dart';
+
 class Products extends StatefulWidget {
   @override
   _ProductsState createState() => _ProductsState();
@@ -16,62 +19,62 @@ class _ProductsState extends State<Products> {
     {
       "name": "Women's Blazer",
       "image": "assets/products/blazer2.jpeg",
-      "old_price": 120,
-      "price": 85,
+      "old_price": 100,
+      "price": 75,
     },
     {
       "name": "Red Dress",
       "image": "assets/products/dress1.jpeg",
-      "old_price": 120,
-      "price": 85,
+      "old_price": 200,
+      "price": 100,
     },
     {
       "name": "Black Dress",
       "image": "assets/products/dress2.jpeg",
-      "old_price": 120,
-      "price": 85,
+      "old_price": 160,
+      "price": 65,
     },
     {
       "name": "Fancy Hills",
       "image": "assets/products/hills1.jpeg",
-      "old_price": 120,
-      "price": 85,
+      "old_price": 90,
+      "price": 55,
     },
     {
       "name": "Red Hills",
       "image": "assets/products/hills2.jpeg",
-      "old_price": 120,
-      "price": 85,
+      "old_price": 80,
+      "price": 65,
     },
     {
       "name": "Black Pant",
       "image": "assets/products/pants1.jpg",
-      "old_price": 120,
-      "price": 85,
+      "old_price": 70,
+      "price": 55,
     },
     {
       "name": "Grey Pant",
       "image": "assets/products/pants2.jpeg",
-      "old_price": 120,
+      "old_price": 90,
       "price": 85,
     },
     {
       "name": "Shoe",
       "image": "assets/products/shoe1.jpg",
-      "old_price": 120,
+      "old_price": 100,
       "price": 85,
     },
     {
       "name": "Flower Skirt",
       "image": "assets/products/skt1.jpeg",
       "old_price": 120,
-      "price": 85,
+      "price": 80,
     },
     {
       "name": "Pink Skirt",
       "image": "assets/products/skt2.jpeg",
-      "old_price": 120,
-      "price": 85,
+      "old_price": 220,
+      "price": 120,
     },
   ];
 
@@ -113,13 +116,19 @@ class SingleProduct extends StatelessWidget {
         tag: productName,
         child: Material(
           child: InkWell(
-            onTap: () {},
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ProductDetails(
+                      productDetailName: productName,
+                      productDetailImage: productImage,
+                      productDetailOldPrice: productOldPrice,
+                      productDetailPrice: productPrice,
+                    ))),
             child: GridTile(
               footer: Container(
                 color: Colors.white70,
                 child: ListTile(
                   leading: Padding(
-                    padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                    padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
                       productName,
                       style: TextStyle(
