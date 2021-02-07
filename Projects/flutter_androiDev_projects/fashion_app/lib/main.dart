@@ -5,6 +5,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 // import 'components/horizontal_listview.dart';
 import 'package:fashion_app/components/horizontal_listview.dart';
 import 'package:fashion_app/components/products.dart';
+import 'package:fashion_app/pages/cart.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -39,7 +40,8 @@ class _HomePageState extends State<HomePage> {
         animationDuration: Duration(seconds: 1),
         dotSize: 4.0,
         dotColor: Colors.red,
-        dotBgColor: Colors.red.withOpacity(0.5),
+        dotBgColor: Colors.transparent,
+        // dotBgColor: Colors.red.withOpacity(0.5),
         indicatorBgPadding: 10.0,
       ),
     );
@@ -61,7 +63,10 @@ class _HomePageState extends State<HomePage> {
               Icons.shopping_cart,
               color: Colors.white,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Cart()));
+            },
           ),
         ],
       ),
@@ -115,11 +120,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Cart()));
+              },
               child: ListTile(
-                title: Text("Categories"),
+                title: Text("My Cart"),
                 leading: Icon(
-                  Icons.dashboard,
+                  Icons.shopping_cart,
                   color: Colors.red,
                 ),
               ),

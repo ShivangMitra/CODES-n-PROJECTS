@@ -126,32 +126,66 @@ class SingleProduct extends StatelessWidget {
             child: GridTile(
               footer: Container(
                 color: Colors.white70,
-                child: ListTile(
-                  leading: Padding(
-                    padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
-                    child: Text(
-                      productName,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        productName,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
                       ),
                     ),
-                  ),
-                  title: Text(
-                    "\$$productPrice",
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.w800,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 5.0, 0.0),
+                      child: Text(
+                        "\$$productOldPrice",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.lineThrough,
+                          fontSize: 16.0,
+                        ),
+                      ),
                     ),
-                  ),
-                  subtitle: Text(
-                    "\$$productOldPrice",
-                    style: TextStyle(
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w800,
-                      decoration: TextDecoration.lineThrough,
+                    Text(
+                      "\$$productPrice",
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
+
+                // child: ListTile(
+                //   leading: Padding(
+                //     padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
+                //     child: Text(
+                //       productName,
+                //       style: TextStyle(
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ),
+                //   title: Text(
+                //     "\$$productPrice",
+                //     style: TextStyle(
+                //       color: Colors.red,
+                //       fontWeight: FontWeight.w800,
+                //     ),
+                //   ),
+                //   subtitle: Text(
+                //     "\$$productOldPrice",
+                //     style: TextStyle(
+                //       color: Colors.black54,
+                //       fontWeight: FontWeight.w800,
+                //       decoration: TextDecoration.lineThrough,
+                //     ),
+                //   ),
+                // ),
               ),
               child: Image.asset(
                 productImage,

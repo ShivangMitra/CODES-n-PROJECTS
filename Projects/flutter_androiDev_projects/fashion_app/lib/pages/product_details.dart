@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//my import
+import 'package:fashion_app/components/products.dart';
+
 class ProductDetails extends StatefulWidget {
   final productDetailName;
   final productDetailImage;
@@ -23,7 +26,12 @@ class _ProductDetailsState extends State<ProductDetails> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text("Fashion App"),
+        title: InkWell(
+          child: Text("Fashion App"),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
         actions: [
           IconButton(
             icon: Icon(
@@ -102,7 +110,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           actions: [
                             MaterialButton(
                               onPressed: () {
-                                Navigator.of(context).pop(context);
+                                Navigator.pop(context);
                               },
                               child: Text("close"),
                             ),
@@ -281,8 +289,73 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
             ],
           ),
+          Divider(),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              "Similar Products",
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
+            ),
+          ),
+          Container(
+            height: 360.0,
+            child: SimilarProducts(),
+          ),
         ],
       ),
+    );
+  }
+}
+
+class SimilarProducts extends StatefulWidget {
+  @override
+  _SimilarProductsState createState() => _SimilarProductsState();
+}
+
+class _SimilarProductsState extends State<SimilarProducts> {
+  var similarProductList = [
+    {
+      "name": "Women's Blazer",
+      "image": "assets/products/blazer2.jpeg",
+      "old_price": 100,
+      "price": 75,
+    },
+    {
+      "name": "Red Hills",
+      "image": "assets/products/hills2.jpeg",
+      "old_price": 80,
+      "price": 65,
+    },
+    {
+      "name": "Black Pant",
+      "image": "assets/products/pants1.jpg",
+      "old_price": 70,
+      "price": 55,
+    },
+    {
+      "name": "Pink Skirt",
+      "image": "assets/products/skt2.jpeg",
+      "old_price": 220,
+      "price": 120,
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      itemCount: similarProductList.length,
+      gridDelegate:
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      itemBuilder: (BuildContext context, int index) {
+        return SingleProduct(
+          productName: similarProductList[index]['name'],
+          productImage: similarProductList[index]['image'],
+          productOldPrice: similarProductList[index]['old_price'],
+          productPrice: similarProductList[index]['price'],
+        );
+      },
     );
   }
 }
