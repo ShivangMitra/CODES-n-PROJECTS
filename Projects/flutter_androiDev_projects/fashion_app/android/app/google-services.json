@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "113544093785",
+    "project_id": "flushion-a0566",
+    "storage_bucket": "flushion-a0566.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113544093785:android:0ee08a94899acd9f5e9148",
+        "android_client_info": {
+          "package_name": "com.example.fashion_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113544093785-uhl8a0s87vedpjsa2h366m3f11de59g1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fashion_app",
+            "certificate_hash": "3bd7227c3c8d97716765ef3a0107412ebcec3073"
+          }
+        },
+        {
+          "client_id": "113544093785-p0ju909j0j6vnhcmbp8tib92ao2dt8m4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmAkUjgHF4RlRDTZTnORCSd4ANRnN1t3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113544093785-p0ju909j0j6vnhcmbp8tib92ao2dt8m4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
