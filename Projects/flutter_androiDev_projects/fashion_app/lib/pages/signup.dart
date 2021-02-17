@@ -1,5 +1,7 @@
+import 'package:fashion_app/pages/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fashion_app/db/users.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -8,6 +10,8 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
+  UserServices _userServices = UserServices();
 
   final _formKey = GlobalKey<FormState>();
   TextEditingController _emailTextController = new TextEditingController();
@@ -67,6 +71,7 @@ class _SignUpState extends State<SignUp> {
                               decoration: InputDecoration(
                                 hintText: "Name",
                                 icon: Icon(Icons.person_outline),
+                                border: InputBorder.none,
                               ),
                               // keyboardType: TextInputType.emailAddress,
                               validator: (value) {
@@ -91,6 +96,7 @@ class _SignUpState extends State<SignUp> {
                               decoration: InputDecoration(
                                 hintText: "Email",
                                 icon: Icon(Icons.email_outlined),
+                                border: InputBorder.none,
                               ),
                               // keyboardType: TextInputType.emailAddress,
                               validator: (value) {
@@ -117,9 +123,11 @@ class _SignUpState extends State<SignUp> {
                             padding: const EdgeInsets.only(left: 12.0),
                             child: TextFormField(
                               controller: _passwordTextController,
+                              obscureText: true,
                               decoration: InputDecoration(
                                 hintText: "Password",
                                 icon: Icon(Icons.lock_outline),
+                                border: InputBorder.none,
                               ),
                               // keyboardType: TextInputType.emailAddress,
                               validator: (value) {
@@ -144,9 +152,11 @@ class _SignUpState extends State<SignUp> {
                             padding: const EdgeInsets.only(left: 12.0),
                             child: TextFormField(
                               controller: _confirmPasswordTextController,
+                              obscureText: true,
                               decoration: InputDecoration(
                                 hintText: "Confirm Password",
                                 icon: Icon(Icons.lock),
+                                border: InputBorder.none,
                               ),
                               // keyboardType: TextInputType.emailAddress,
                               validator: (value) {
@@ -154,6 +164,9 @@ class _SignUpState extends State<SignUp> {
                                   return "The password cannot be empty";
                                 else if (value.length < 6) {
                                   return "The password must be atleast 6 characters long";
+                                } else if (_passwordTextController.text !=
+                                    value) {
+                                  return "The passwords do not match";
                                 }
                                 return null;
                               },
@@ -167,7 +180,9 @@ class _SignUpState extends State<SignUp> {
                           borderRadius: BorderRadius.circular(20.0),
                           color: Colors.red.withOpacity(0.8),
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              validateForm();
+                            },
                             minWidth: MediaQuery.of(context).size.width,
                             child: Text(
                               "Sign up",
@@ -244,5 +259,28 @@ class _SignUpState extends State<SignUp> {
         ],
       ),
     );
+  }
+
+  Future validateForm() async {
+    FormState formState = _formKey.currentState;
+    if (formState.validate()) {
+      User user = firebaseAuth.currentUser;
+      if (user == null) {
+        User createUser = (await FirebaseAuth.instance
+                .createUserWithEmailAndPassword(
+                    email: _emailTextController.text,
+                    password: _passwordTextController.text))
+            .user;
+        _userServices.createUser({
+          "id": createUser.uid,
+          "username": _nameTextController.text,
+          "email": _emailTextController.text,
+          // "profilePicture": createUser.photoURL,
+        });
+
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
+      }
+    }
   }
 }

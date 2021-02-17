@@ -10,6 +10,9 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      primaryColor: Colors.red,
+    ),
     home: App(),
   ));
 }

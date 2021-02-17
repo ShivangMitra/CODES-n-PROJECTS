@@ -76,6 +76,7 @@ class _LoginState extends State<Login> {
         FirebaseFirestore.instance.collection("users").doc(user.uid).set({
           "id": user.uid,
           "username": user.displayName,
+          "email": user.email,
           "profilePicture": user.photoURL,
         });
 
@@ -151,6 +152,7 @@ class _LoginState extends State<Login> {
                               decoration: InputDecoration(
                                 hintText: "Email",
                                 icon: Icon(Icons.email_outlined),
+                                border: InputBorder.none,
                               ),
                               // keyboardType: TextInputType.emailAddress,
                               validator: (value) {
@@ -177,9 +179,11 @@ class _LoginState extends State<Login> {
                             padding: const EdgeInsets.only(left: 12.0),
                             child: TextFormField(
                               controller: _passwordTextController,
+                              obscureText: true,
                               decoration: InputDecoration(
                                 hintText: "Password",
                                 icon: Icon(Icons.lock_outline),
+                                border: InputBorder.none,
                               ),
                               // keyboardType: TextInputType.emailAddress,
                               validator: (value) {
