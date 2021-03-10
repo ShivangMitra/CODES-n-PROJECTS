@@ -1,5 +1,5 @@
 #include <iostream>
-#include <queue>
+#include <stack>
 using namespace std;
 
 typedef long long int lli;
@@ -17,53 +17,44 @@ int main()
         string syntax;
         cin >> syntax;
 
-        queue<lli> pile;
-
-        if (syntax[0] == '>')
+        stack<lli> pile;
+        bool complete = true;
+        lli index;
+        for (lli i = 0; i < syntax.length(); i++)
         {
-            cout << 0 << "\n";
-        }
-        else
-        {
-            pile.push(0);
-            bool complete = true;
-            lli index;
-            for (lli i = 1; i < syntax.length(); i++)
+            if (syntax[i] == '<')
             {
-                if (syntax[i] == '<')
+                if (pile.empty())
                 {
+                    index = i;
                     pile.push(i);
                 }
                 else
                 {
-                    if (pile.empty())
-                    {
-                        cout << i << "\n";
-                        complete = false;
-                        break;
-                    }
-                    else
-                    {
-                        index = pile.front();
-                        pile.pop();
-                    }
+                    pile.push(i);
                 }
             }
-            if (complete && pile.empty())
+            else
             {
-                cout << syntax.length() << "\n";
-            }
-            else if (complete)
-            {
-                if (syntax[syntax.length() - 1] == '>')
+                if (pile.empty())
                 {
-                    cout << index + 1 << "\n";
+                    cout << i << "\n";
+                    complete = false;
+                    break;
                 }
                 else
                 {
-                    cout << index + 2 << "\n";
+                    pile.pop();
                 }
             }
+        }
+        if (complete && pile.empty())
+        {
+            cout << syntax.length() << "\n";
+        }
+        else if (complete)
+        {
+            cout << index << "\n";
         }
     }
 }
