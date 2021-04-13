@@ -1,0 +1,32 @@
+.thumb:hover {
+  background-color: aqua;
+}
+.thumb:hover + .title {
+  /* opacity: 1; */
+  display: block;
+}
+.title {
+  /* opacity: 0.01; */
+  display: none;
+  color: red;
+  background-color: yellow;
+  text-align: center;
+  width: 130px;
+  padding: 10px;
+}
+.thumb2:hover {
+  background-color: aqua;
+}
+.thumb2:hover + .title2 {
+  /* opacity: 1; */
+  display: block;
+}
+.title2 {
+  /* opacity: 0.01; */
+  display: none;
+  color: red;
+  background-color: yellow;
+  text-align: center;
+  width: 130px;
+  padding: 10px;
+}
