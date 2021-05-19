@@ -1,7 +1,15 @@
 // import logo from './logo.svg';
-import React from 'react';
+import React, {useReducer} from 'react';
 import './App.css';
-import ComponentC from './components/ComponentC';
+// import ComponentP from './components/ComponentP';
+// import ComponentQ from './components/ComponentQ';
+// import ComponentR from './components/ComponentR';
+// import DataFetchingOne from './components/DataFetchingOne';
+import DataFetchingTwo from './components/DataFetchingTwo';
+// import CounterThree from './components/CounterThree';
+// import ComponentC from './components/ComponentC';
+// import CounterOne from './components/CounterOne';
+// import CounterTwo from './components/CounterTwo';
 // import DataFetching from './components/DataFetching';
 // import IntervalHookCounter from './components/IntervalHookCounter';
 // import HookCounterOne from './components/HookCounterOne';
@@ -15,7 +23,26 @@ import ComponentC from './components/ComponentC';
 export const UserContext = React.createContext()
 export const ChannelContext = React.createContext()
 
+export const CountContext = React.createContext()
+
+const initialState = 0
+const reducer = (state, action) => {
+    switch(action){
+        case 'increment':
+            return state + 1
+        case 'decrement':
+            return state - 1
+        case 'reset':
+            return initialState
+        default:
+            return state
+    }
+}
+
 function App() {
+
+  const [count, dispatch] = useReducer(reducer, initialState)
+
   return (
     <div className="App">
       {/* <ClassCounter></ClassCounter> */}
@@ -27,11 +54,22 @@ function App() {
       {/* <MouseContainer></MouseContainer> */}
       {/* <IntervalHookCounter></IntervalHookCounter> */}
       {/* <DataFetching></DataFetching> */}
-      <UserContext.Provider value={"Chintu"}>
+      {/* <UserContext.Provider value={"Chintu"}>
         <ChannelContext.Provider value={"Cartoon Network"}>
           <ComponentC></ComponentC>
         </ChannelContext.Provider>
-      </UserContext.Provider>
+      </UserContext.Provider> */}
+      {/* <CounterOnte></CounterOnte> */}
+      {/* <CounterTwo></CounterTwo> */}
+      {/* <CounterThree></CounterThree> */}
+      {/* <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
+        Count - {count}
+        <ComponentP></ComponentP>
+        <ComponentQ></ComponentQ>
+        <ComponentR></ComponentR>
+      </CountContext.Provider> */}
+      {/* <DataFetchingOne></DataFetchingOne> */}
+      <DataFetchingTwo></DataFetchingTwo>
     </div>
   );
 }
