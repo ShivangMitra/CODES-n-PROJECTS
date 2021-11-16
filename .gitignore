@@ -1,5 +1,6 @@
 /Pytorch_Learn_Codes/data
 /Pytorch_Learn_Codes/runs
-/Computer Vision/ComputerVisionMasterclass/required
-/Computer Vision/ComputerVisionMasterclass/yalefaces
+/Computer_Vision/ComputerVisionMasterclass/required
+/Computer_Vision/ComputerVisionMasterclass/yalefaces
+*.yml
 **/.idea
