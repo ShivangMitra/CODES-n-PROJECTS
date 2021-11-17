@@ -2,5 +2,6 @@
 /Pytorch_Learn_Codes/runs
 /Computer_Vision/ComputerVisionMasterclass/required
 /Computer_Vision/ComputerVisionMasterclass/yalefaces
+*.mp4
 *.yml
 **/.idea
