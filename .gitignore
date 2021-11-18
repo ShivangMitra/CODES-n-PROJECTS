@@ -2,6 +2,9 @@
 /Pytorch_Learn_Codes/runs
 /Computer_Vision/ComputerVisionMasterclass/required
 /Computer_Vision/ComputerVisionMasterclass/yalefaces
+/Computer_Vision/ComputerVisionMasterclass/homer_bart_1
+/Computer_Vision/ComputerVisionMasterclass/simpson_network1.json
 *.mp4
 *.yml
+*.hdf5
 **/.idea
