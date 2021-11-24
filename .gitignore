@@ -10,6 +10,13 @@
 /Computer_Vision/ComputerVisionMasterclass/simpson_network2.json
 /Computer_Vision/ComputerVisionMasterclass/conv_simpson_network.json
 /Computer_Vision/ComputerVisionMasterclass/simpson_features.csv
+/Computer_Vision/DL_CV/Face_Detection/*.xml
+/Computer_Vision/DL_CV/GAN/data
+/Computer_Vision/DL_CV/GAN/results
+/Computer_Vision/DL_CV/Object_Detection/__pycache__
+/Computer_Vision/DL_CV/Object_Detection/data
+/Computer_Vision/DL_CV/Object_Detection/layers
+/Computer_Vision/DL_CV/Object_Detection/*.pth
 *.mp4
 *.yml
 *.hdf5
